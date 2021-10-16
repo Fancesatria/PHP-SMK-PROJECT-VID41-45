@@ -9,12 +9,17 @@
     if (isset($_GET['tambah'])) {
         $id = $_GET['tambah'];
         $_SESSION['_'.$id]++;
-
+        
     }
 
     if (isset($_GET['kurang'])) {
         $id = $_GET['kurang'];
         $_SESSION['_'.$id]--;
+        
+        if ($_SESSION['_'.$id]==0){
+            unset($_SESSION['_'.$id]);
+        }
+
         
     }
 
